@@ -1,0 +1,40 @@
+﻿@model IEnumerable<StokKontrolMvc.Models.Entity.Musteriler>
+
+@{
+    ViewBag.Title = "Müşteriler";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Müşteriler</h2>
+
+<p>
+    @Html.ActionLink("Yeni Müşteri Oluştur", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MusteriAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MusteriSoyad)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MusteriAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MusteriSoyad)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Düzenle", new { id=item.MusteriID }) |
+            @Html.ActionLink("Detay", "Detay", new { id=item.MusteriID }) |
+            @Html.ActionLink("Sil", "Sil", new { id=item.MusteriID })
+        </td>
+    </tr>
+}
+
+</table>

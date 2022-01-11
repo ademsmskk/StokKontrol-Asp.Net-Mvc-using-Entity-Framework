@@ -1,0 +1,40 @@
+﻿@using StokKontrolMvc.Models.Entity
+
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@model StokKontrolMvc.Models.Entity.Urunler
+
+@using (Html.BeginForm("UrunGuncelle", "urun", FormMethod.Post))
+{
+
+    <div class="form-group">
+
+        @Html.LabelFor(k => k.UrunID)
+        @Html.TextBoxFor(k => k.UrunID, new { @class = "form-control" })
+
+        @Html.LabelFor(k => k.UrunAd)
+        @Html.TextBoxFor(k => k.UrunAd, new { @class = "form-control" })
+
+        @Html.LabelFor(k => k.UrunKategori)
+        @Html.TextBoxFor(k => k.UrunKategori, new { @class = "form-control" })
+
+        @Html.LabelFor(k => k.Fiyat)
+        @Html.TextBoxFor(k => k.Fiyat, new { @class = "form-control" })
+
+        @Html.LabelFor(k => k.Marka)
+        @Html.TextBoxFor(k => k.Marka, new { @class = "form-control" })
+
+        @Html.LabelFor(k => k.Stok)
+        @Html.TextBoxFor(k => k.Stok, new { @class = "form-control" })
+
+        <div>
+            <button class=" btn btn-warning">Ürün Güncelle</button>
+
+
+        </div>
+
+
+    </div>
+}

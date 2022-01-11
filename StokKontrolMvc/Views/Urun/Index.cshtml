@@ -1,0 +1,38 @@
+﻿@using StokKontrolMvc.Models.Entity;
+@model List<Urunler>
+@{
+    ViewBag.Title = "Ürünler";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<a href="/Urun/UrunEkle/ " class=" btn btn-primary">Yeni Ürün Ekle</a>
+<table class=" table table-bordered">
+    <tr>
+        <th>Ürün İD</th>
+        <th>Ürün Adı</th>
+        <th>Ürün Kategori</th>
+        <th>Ürün Fiyat</th>
+        <th>Marka</th>
+        <th>Stok</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        
+        @foreach (Urunler urun in Model)
+        {
+        <tr>
+            <td>@urun.UrunID</td>
+            <td>@urun.UrunAd</td>
+            <td>@urun.UrunKategori</td>
+            <td>@urun.Fiyat</td>
+            <td>@urun.Marka</td>
+            <td>@urun.Stok</td>
+            <td><a href="/Urun/Sil/@urun.UrunID/" class=" btn btn-danger">SİL</a></td>
+            <td><a href="/Urun/Guncelle/@urun.UrunID/" class="btn btn-success">GÜNCELLE</a></td>
+        </tr>
+        }
+
+
+    </tbody>
+</table>
+

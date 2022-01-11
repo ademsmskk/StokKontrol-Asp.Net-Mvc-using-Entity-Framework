@@ -1,0 +1,30 @@
+﻿@using StokKontrolMvc.Models.Entity
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+@model StokKontrolMvc.Models.Entity.Kategoriler
+
+@using (Html.BeginForm("Guncelle", "ktg", FormMethod.Post))
+{
+
+    <div class="form-group">
+
+        @Html.LabelFor(k => k.KategoriID)
+        @Html.TextBoxFor(k => k.KategoriID, new { @class = "form-control" })
+
+        @Html.LabelFor(k => k.KategoriAd)
+        @Html.TextBoxFor(k => k.KategoriAd, new { @class = "form-control" })
+
+
+        <div>
+            <button class=" btn btn-warning">Ürün Güncelle</button>
+
+
+        </div>
+
+
+    </div>
+}

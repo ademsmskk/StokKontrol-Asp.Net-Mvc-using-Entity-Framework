@@ -1,0 +1,33 @@
+﻿@using StokKontrolMvc.Models.Entity
+@model List<Kategoriler>
+
+@{
+    ViewBag.Title = "Kategoriler";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<a href="/Kategori/KategoriEkle/ " class=" btn btn-primary">Yeni Kategori Ekle</a>
+<table class=" table table-bordered">
+    <tr>
+        <th>Kategori İD</th>
+        <th>Kategori Adı</th>
+      
+    </tr>
+    <tbody>
+
+        @foreach (Kategoriler ktg in Model)
+        {
+            <tr>
+                <td>@ktg.KategoriID</td>
+                <td>@ktg.KategoriAd</td>
+               
+                <td><a href="/Kategori/Sil/@ktg.KategoriID/" class=" btn btn-danger">SİL</a></td>
+                <td><a href="/Kategori/Guncelle/@ktg.KategoriID/" class="btn btn-success">GÜNCELLE</a></td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+

@@ -1,0 +1,34 @@
+﻿@using StokKontrolMvc.Models.Entity;
+
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class=" form-group " method="post">
+    <div>
+        <label>Ürün Adı:</label>
+        <input type="text" class=" form-control" name="UrunAd" />
+    </div>
+    <div>
+        <label>Kategori Seçiniz:</label>
+        <input type="number" class=" form-control" name="UrunKategori" />
+        
+
+    </div>
+    <div>
+        <label>Fiyat:</label>
+        <input type="number" class=" form-control" name="Fiyat" />
+    </div>
+    <div>
+        <label>Marka:</label>
+        <input type="text" class=" form-control" name="Marka" />
+        <div>
+            <label>Stok Adet:</label>
+            <input type="number" class=" form-control" name="Stok" />
+        </div>
+    </div>
+    <br />
+    <button class=" btn btn-info">ÜRÜN EKLE</button>
+</form>
+
